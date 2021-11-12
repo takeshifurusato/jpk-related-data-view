@@ -1,36 +1,52 @@
-
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-      <meta charset="utf-8">
-      <title>サンプル</title>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-      <script type="text/javascript">
-          $(function(){
-              const base_url = "https://script.google.com/macros/s/AKfycbyDb5y5RqvKaZB7CFlM3tNRq2rKrj7oclHtn_rMj89a6cMnhD5npqgGQvCuvoFBOt0_/exec?id=";
-              $('input[name="send"]').click(function(){
-                  var url = base_url + $('input[name="id"]').val();
-                  $.getJSON(url, (data) => {
-                      console.log(data);
-                      $('#title').html(data.session_title);
-                      $('#detail').html(data.detail);
-                      $('#share_url').html(data.share_url);
-                      $('#speaker').html(data.speaker);
-                      $('#viewers_count').html(100);
-                      $('#share').attr('src', data.share_url);
-                  });
-              });
-          });
-      </script>
-  </head>
-  <body>
-    <iframe id="share" width="1000" height="400" src=""></iframe>
-    <div id="title"></div>
-    <div id="speaker"></div>
-    <div id="viewers_count"></div>
-    <div id="detail"></div>
-    <div id="share_url"></div>
+<head>
+    <meta charset="utf-8">
+    <title>サンプル</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            const base_url = "https://script.google.com/macros/s/AKfycbyDb5y5RqvKaZB7CFlM3tNRq2rKrj7oclHtn_rMj89a6cMnhD5npqgGQvCuvoFBOt0_/exec?id=";
+            $('input[name="send"]').click(function(){
+                var url = base_url + $('input[name="id"]').val();
+                $.getJSON(url, (data) => {
+                    console.log(data);
+                    $('#title_en').html(data.session_title_en);
+                    $('#title_jp').html(data.session_title_jp);
+                    $('#detail').html(data.detail);
+                    $('#share_url').html(data.share_url);
+                    $('#speaker').html(data.speaker);
+                    $('#viewers_count').html("Viewers: " + 100);
+                    $('#share').attr('src', data.share_url);
+                });
+            });
+        });
+    </script>
+    <style type="text/css">
+        body{
+            background-color: #1A1A1A;
+            color: #FFFFFF;
+        }
+        .wrapper{
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+<div>
     <input type="text" name="id">
     <input type="button" name="send" value="表示">
-  </body>
+</div>
+<iframe id="share" width="1233" height="400" src=""></iframe>
+<div id="share_url"></div>
+<div class="wrapper">
+    <div id="title_en"></div>
+    <div id="title_jp"></div>
+    <hr>
+    <div id="speaker"></div>
+    <hr>
+    <div id="viewers_count"></div>
+    <div id="detail"></div>
+</div>
+</body>
 </html>
