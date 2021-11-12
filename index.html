@@ -7,7 +7,7 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script type="text/javascript">
           $(function(){
-              const base_url = "https://script.google.com/macros/s/AKfycbzGGemCG0RW-BlyV4aX0j-ZKgrvnsbqpB3DYNjex9qHBisZUWhKEr04a4gJ0sG5Wxje/exec?id=";
+              const base_url = "https://script.google.com/macros/s/AKfycbyDb5y5RqvKaZB7CFlM3tNRq2rKrj7oclHtn_rMj89a6cMnhD5npqgGQvCuvoFBOt0_/exec?id=";
               $('input[name="send"]').click(function(){
                   var url = base_url + $('input[name="id"]').val();
                   $.getJSON(url, (data) => {
