@@ -12,9 +12,10 @@
                   var url = base_url + $('input[name="id"]').val();
                   $.getJSON(url, (data) => {
                       console.log(data);
-                      $('#title').html(data.title);
+                      $('#title').html(data.session_title);
                       $('#detail').html(data.detail);
                       $('#share_url').html(data.share_url);
+                      $('#speaker').html(data.speaker)
                       $('#share').attr('src', data.share_url);
                   });
               });
@@ -24,6 +25,7 @@
   <body>
     <iframe id="share" width="1000" height="400" src=""></iframe>
     <div id="title"></div>
+    <div id="speaker"></div>
     <div id="detail"></div>
     <div id="share_url"></div>
     <input type="text" name="id">
