@@ -15,7 +15,8 @@
                       $('#title').html(data.session_title);
                       $('#detail').html(data.detail);
                       $('#share_url').html(data.share_url);
-                      $('#speaker').html(data.speaker)
+                      $('#speaker').html(data.speaker);
+                      $('#viewers_count').html(100);
                       $('#share').attr('src', data.share_url);
                   });
               });
@@ -26,6 +27,7 @@
     <iframe id="share" width="1000" height="400" src=""></iframe>
     <div id="title"></div>
     <div id="speaker"></div>
+    <div id="viewers_count"></div>
     <div id="detail"></div>
     <div id="share_url"></div>
     <input type="text" name="id">
